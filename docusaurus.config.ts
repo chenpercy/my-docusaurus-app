@@ -39,32 +39,59 @@ const config: Config = {
     [
       'classic',
       {
-        docs: {
-          sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        docs: false,
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'tech',
+        routeBasePath: 'tech',
+        path: './tech',
+        showReadingTime: true,
+        feedOptions: {type: ['rss', 'atom'], xslt: true},
+        onUntruncatedBlogPosts: 'ignore',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'music',
+        routeBasePath: 'music',
+        path: './music',
+        showReadingTime: true,
+        feedOptions: {type: ['rss', 'atom'], xslt: true},
+        onUntruncatedBlogPosts: 'ignore',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'game',
+        routeBasePath: 'game',
+        path: './game',
+        showReadingTime: true,
+        feedOptions: {type: ['rss', 'atom'], xslt: true},
+        onUntruncatedBlogPosts: 'ignore',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'play',
+        routeBasePath: 'play',
+        path: './play',
+        showReadingTime: true,
+        feedOptions: {type: ['rss', 'atom'], xslt: true},
+        onUntruncatedBlogPosts: 'ignore',
+      },
     ],
   ],
 
@@ -81,13 +108,10 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Tutorial',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/tech', label: 'Tech', position: 'left'},
+        {to: '/music', label: 'Music', position: 'left'},
+        {to: '/game', label: 'Game', position: 'left'},
+        {to: '/play', label: 'Play', position: 'left'},
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -99,42 +123,12 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Topics',
           items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
+            {label: 'Tech', to: '/tech'},
+            {label: 'Music', to: '/music'},
+            {label: 'Game', to: '/game'},
+            {label: 'Play', to: '/play'},
           ],
         },
       ],
