@@ -144,6 +144,11 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Percy Chen. Built with Docusaurus.`,
     },
+    algolia: {
+      appId: '9SZM5IYZO5',
+      apiKey: '4e77c337bb8b44d0ccfb1684f0f10ad9',
+      indexName: 'mycrawler_pages',
+    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
